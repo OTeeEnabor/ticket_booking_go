@@ -1,0 +1,23 @@
+%T is a placeholder for the type of a variable.
+
+A pointer is a variable that points to the memory address of another variable and references the value stored at the address. It is known as a special variable in Go. 
+
+get memory address of a variable -- &variableName
+
+
+Arrays & Slices in Go
+used to store collection of elements
+
+Arrays are fixed size.
+    - need to specify the length of the Arrays
+    - cannot mix types 
+Slices are dynamic in size.
+    - dynamic size, no need to specify the length of elements
+    - use append function to add element to end of list
+
+    Loops in Go
+
+    Only for loop with different types. 
+
+    1 - infinite loop
+    2 - For each loop
