@@ -1,3 +1,7 @@
+Syntax to initialise a module
+
+go mod init module name
+
 %T is a placeholder for the type of a variable.
 
 A pointer is a variable that points to the memory address of another variable and references the value stored at the address. It is known as a special variable in Go. 
@@ -9,12 +13,16 @@ Arrays & Slices in Go
 used to store collection of elements
 
 Arrays are fixed size.
+var varName [x]int --> an array of size 10 containing ints
     - need to specify the length of the Arrays
     - cannot mix types 
 Slices are dynamic in size.
+var varName []Type
     - dynamic size, no need to specify the length of elements
     - use append function to add element to end of list
-
+slices can be "sliced"
+ - slice[low:high] - high is exclusive
+slices do not store any data but reference a section of an underlying array
     Loops in Go
 
     Only for loop with different types. 
@@ -62,4 +70,17 @@ import functions from other packages
  cannot mix data types 
 
  Structs - allows for mixing of data types
- 
+
+
+ Concurrency in go 
+
+ go keyword
+
+ sync.Waitgroup 
+- Waits for the launched goroutine to finish
+- from "sync" package - basic synchronisation functionality
+
+Waitgroup methods
+Add - sets the number of goroutines to wait for (increases the counter by the provided number)
+Wait - Blocks unitl the WaitGroup counter is 0
+Done - Decrements the WaitGroup counter by 1. So this is called by the goroutine to indicate that its finished
