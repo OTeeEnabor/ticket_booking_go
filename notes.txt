@@ -21,3 +21,45 @@ Slices are dynamic in size.
 
     1 - infinite loop
     2 - For each loop
+
+Conditional statements in Go
+if statement
+
+user input validation
+
+
+switch statement
+	// //  switch statement 
+	// city := "London"
+	// switch city {
+	// case "New York":
+	// 	// execute code for bookings in New York
+	// case "Johannesburg","Port Elizabeth":
+	// 	// execute code for bookings in Johannesburg
+	// case "Lagos":
+	// 	// execute code for bookings in Lagos
+	
+	// default:
+	// 	fmt.Println("Default condition")
+	// }
+
+Functions
+Funcs are used to encapsulate a specif logic that can be executed when needed by calling the function name. 
+
+Avoids repetiveness and cluttering your code. 
+
+import functions from other packages
+ - import mod name function name
+ - function name must start with capital 
+
+ 3 levels of scope
+ - local
+ - package
+ - global
+
+ Maps - similar to dictionaries? different from struct?
+ unique keys to value pairs 
+ cannot mix data types 
+
+ Structs - allows for mixing of data types
+ 
