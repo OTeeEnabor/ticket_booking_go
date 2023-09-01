@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"ticket-booking/helper"
 	"time"
+	"sync"
 )
 
 //  define package level variables
@@ -12,6 +13,7 @@ var conferenceName string = "Demystifying Blockchain Bootcamp"
 var remainingTickets uint8 = 50
 // define slice
 var bookings = make([]UserData,0) // create a list of maps
+var wg = sync.WaitGroup{}
 
 type UserData struct {
 	firstName string
@@ -35,9 +37,10 @@ func main () {
 		if isValidInput {
 			// book tickets
 			bookTickets(userTickets, firstName, lastName, email)
-
+			wg.Add(1)
 			// send ticket
-			sendTicket(userTickets, firstName, lastName, email)
+			go sendTicket(userTickets, firstName, lastName, email)
+			
 			
 			// declare a slice variable to store firstnames of bookings
 			firstNames := getFirstNames()
@@ -67,6 +70,7 @@ func main () {
 			
 		}
 	}
+	wg.Wait()
 
 
 }
@@ -148,4 +152,5 @@ func sendTicket(userTickets uint8, firstName,lastName, email string) {
 	fmt.Println("###############")
 	fmt.Printf("Sending ticket:\n %v to email address %v\n", ticket, email)
 	fmt.Println("###############")
+	wg.Done()
 }
